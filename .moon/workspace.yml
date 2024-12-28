@@ -1,0 +1,22 @@
+$schema: 'https://moonrepo.dev/schemas/workspace.json'
+
+projects:
+  - './apps/*'
+  - './libs/*'
+  - './packages/*'
+
+vcs:
+  manager: 'git'
+  defaultBranch: 'main'
+
+runner:
+  archivableTargets:
+    - ':build'
+    - ':lint'
+    - ':test'
+    - ':format'
+  logRunningCommand: true
+
+generator:
+  templates:
+    - 'git://github.com/DynamicQuants/moonrepo-templates/templates#main'
